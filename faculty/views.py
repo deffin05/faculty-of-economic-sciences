@@ -15,7 +15,8 @@ def get_department(request, department_id):
     return render(request, 'faculty/department.html')
 
 def get_programs(request):
-    return render(request, 'faculty/programs.html')
+    programs = Major.objects.all()
+    return render(request, 'faculty/programs.html', {'programs': programs})
 
 def get_program(request, program_id):
     return render(request, 'faculty/program.html')

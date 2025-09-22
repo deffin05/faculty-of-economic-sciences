@@ -20,6 +20,12 @@ class Major(models.Model):
     coordinator_contact = models.CharField(max_length=100)
     department = models.ForeignKey('Department', on_delete=models.SET_NULL, null=True)
 
+    def get_short_description(self):
+        if len(self.description.split()) > 50:
+            return ' '.join(self.description.split()[:50]) + "..."
+        else:
+            return self.description
+
 class Subject(models.Model):
     major = models.ForeignKey('Major', on_delete=models.CASCADE)
     name = models.CharField(max_length=100)
