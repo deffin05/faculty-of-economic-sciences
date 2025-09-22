@@ -12,9 +12,9 @@
         <p>Завідувач: {{ department.head.name }}</p>
         <p>Спеціальності:</p>
         <ul>
-        {% for major in department.major_set.all %}
-            <li><a href="../programs/{{ major.id }}">{{ major.code }} {{ major.name }}</a></li>
-        {% endfor %}
+            {% for major in department.major_set.all %}
+                <li><a href="../programs/{{ major.id }}">{{ major.code }} {{ major.name }}</a></li>
+            {% endfor %}
         </ul>
     </div>
 {% endfor %}

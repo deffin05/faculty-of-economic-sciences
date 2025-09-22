@@ -2,9 +2,31 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>{{ department.name }}</title>
+    {% load static %}
 </head>
 <body>
 
+<h1>{{ department.name }}</h1>
+
+<h2>Завідувач кафедри</h2>
+<p>{{ department.head.name }}</p>
+
+<h3>Спеціальності</h3>
+<ul>
+    {% for program in department.major_set.all %}
+        <li>{{ program.code }} {{ program.name }}</li>
+    {% endfor %}
+</ul>
+
+<h3>Викладачі</h3>
+<ul>
+    {% for professor in department.professors.all %}
+        <li>
+            <p>{{ professor.name }}</p>
+            <p>{{ professor.position }} | {{ professor.degree }}</p>
+        </li>
+    {% endfor %}
+</ul>
 </body>
 </html>
