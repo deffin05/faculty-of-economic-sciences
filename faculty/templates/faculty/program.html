@@ -1,27 +1,19 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>{{ program.name }}</title>
-    {% load static %}
-</head>
-<body>
+{% extends "faculty/base.html" %}
 
-<h1>{{ program.code }}. {{ program.name }}</h1>
+{% block content %}
+    <h1>{{ program.code }}. {{ program.name }}</h1>
 
-<h3>Опис</h3>
-<p>{{ program.description }}</p>
+    <h3>Опис</h3>
+    <p>{{ program.description }}</p>
 
-<h3>Координатор набору</h3>
-<p>{{ program.coordinator_name }}</p>
-<p>{{ program.coordinator_contact }}</p>
+    <h3>Координатор набору</h3>
+    <p>{{ program.coordinator_name }}</p>
+    <p>{{ program.coordinator_contact }}</p>
 
-<h3>Навчальний план</h3>
-<ul>
-    {% for subject in program.subject_set.all %}
-        <li>{{ subject.name }}</li>
-    {% endfor %}
-</ul>
-
-</body>
-</html>
+    <h3>Навчальний план</h3>
+    <ul>
+        {% for subject in program.subject_set.all %}
+            <li>{{ subject.name }}</li>
+        {% endfor %}
+    </ul>
+{% endblock %}

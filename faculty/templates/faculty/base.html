@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static '/faculty/style.css' %}">
+</head>
+<body>
+<header>
+    <nav>
+        <a href="{% url 'index' %}" class="logo_container">
+            <img src="{% static 'faculty/images/logo.png' %}" alt="logo">
+        </a>
+
+        <div class="nav_links">
+            <a href="{% url 'departments' %}">Кафедри</a>
+            <a href="{% url 'programs' %}">Спеціальності</a>
+        </div>
+    </nav>
+</header>
+
+<section class="content">
+    {% block content %}
+    {% endblock %}
+</section>
+
+</body>
+</html>

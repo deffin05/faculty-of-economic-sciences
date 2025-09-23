@@ -1,22 +1,16 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Programs</title>
-    {% load static %}
-</head>
-<body>
-<h1>Спеціальності</h1>
-{% for program in programs %}
-    <div>
-        <h3>{{ program.code }} {{ program.name }}</h3>
-        <p>
-            {{ program.get_short_description }}
-        </p>
-        <p>Координатор набору:</p>
-        <p>{{ program.coordinator_name }}</p>
-        <p>{{ program.coordinator_contact }}</p>
-    </div>
-{% endfor %}
-</body>
-</html>
+{% extends "faculty/base.html" %}
+
+{% block content %}
+    <h1>Спеціальності</h1>
+    {% for program in programs %}
+        <div class="repeated_block">
+            <a href="{{ program.id }}"><h3>{{ program.code }} {{ program.name }}</h3></a>
+            <p>
+                {{ program.get_short_description }}
+            </p>
+            <p>Координатор набору:</p>
+            <p>{{ program.coordinator_name }}</p>
+            <p>{{ program.coordinator_contact }}</p>
+        </div>
+    {% endfor %}
+{% endblock %}

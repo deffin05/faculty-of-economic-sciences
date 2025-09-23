@@ -1,22 +1,17 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Departments</title>
-    {% load static %}
-</head>
-<body>
-{% for department in departments %}
-    <div>
-        <p>{{ department.name }}</p>
-        <p>Завідувач: {{ department.head.name }}</p>
-        <p>Спеціальності:</p>
-        <ul>
-            {% for major in department.major_set.all %}
-                <li><a href="../programs/{{ major.id }}">{{ major.code }} {{ major.name }}</a></li>
-            {% endfor %}
-        </ul>
-    </div>
-{% endfor %}
-</body>
-</html>
+{% extends "faculty/base.html" %}
+
+{% block content %}
+    <h1>Кафедри</h1>
+    {% for department in departments %}
+        <div class="repeated_block">
+            <a href="{{ department.id }}"><h3>{{ department.name }}</h3></a>
+            <p>Завідувач: {{ department.head.name }}</p>
+            <p>Спеціальності:</p>
+            <ul>
+                {% for major in department.major_set.all %}
+                    <li><a href="../programs/{{ major.id }}">{{ major.code }} {{ major.name }}</a></li>
+                {% endfor %}
+            </ul>
+        </div>
+    {% endfor %}
+{% endblock %}
