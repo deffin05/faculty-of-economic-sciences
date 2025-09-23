@@ -5,7 +5,7 @@
     {% for department in departments %}
         <div class="repeated_block">
             <a href="{{ department.id }}"><h3>{{ department.name }}</h3></a>
-            <p>Завідувач: {{ department.head.name }}</p>
+            <p>Завідувач: {{ department.head }}</p>
             <p>Спеціальності:</p>
             <ul>
                 {% for major in department.major_set.all %}
