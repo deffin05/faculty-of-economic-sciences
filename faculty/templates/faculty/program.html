@@ -1,5 +1,9 @@
 {% extends "faculty/base.html" %}
 
+{% block title %}
+<title>{{ program.name }}</title>
+{% endblock %}
+
 {% block content %}
     <h1>{{ program.code }}. {{ program.name }}</h1>
 
