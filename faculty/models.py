@@ -29,3 +29,8 @@ class Major(models.Model):
 class Subject(models.Model):
     major = models.ForeignKey('Major', on_delete=models.CASCADE)
     name = models.CharField(max_length=200)
+
+class MainPage(models.Model):
+    title = models.CharField(max_length=100)
+    description = models.TextField()
+    contacts = models.TextField()

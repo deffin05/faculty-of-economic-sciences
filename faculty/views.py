@@ -1,11 +1,14 @@
 from django.http import HttpResponse
 from django.shortcuts import render
 
-from faculty.models import Department, Major
+from faculty.models import Department, Major, MainPage
+
+
 # Create your views here.
 
 def index(request):
-    return render(request, 'faculty/index.html')
+    homepage = MainPage.objects.get(id=1)
+    return render(request, 'faculty/index.html', {'homepage': homepage})
 
 def get_departments(request):
     departments = Department.objects.all()
