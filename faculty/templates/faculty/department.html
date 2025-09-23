@@ -12,7 +12,7 @@
     <h3>Спеціальності</h3>
     <ul>
         {% for program in department.major_set.all %}
-            <li>{{ program.code }} {{ program.name }}</li>
+            <li><a href="../../programs/{{ program.id }}">{{ program.code }} {{ program.name }}</a></li>
         {% endfor %}
     </ul>
 
