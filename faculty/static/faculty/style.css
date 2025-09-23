@@ -18,6 +18,10 @@ nav a{
     color: #FAE3D9;
 }
 
+nav a:hover {
+    color: #FFFFFF;
+}
+
 .nav_links{
     font-size: 1.2rem;
     min-width: 250px;
