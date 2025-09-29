@@ -11,7 +11,12 @@ pip install -r requirements.txt
 ```bash
 python manage.py migrate
 ```
-4. Run the server
+4. Create superuser
+```bash
+python manage.py createsuperuser
+```
+5. Run the server
 ```bash
 python manage.py runserver
 ```
+6. Add homepage info in the admin panel
