@@ -1,0 +1,19 @@
+{% extends "faculty/base.html" %}
+
+{% block title %}
+<title>Спеціальності</title>
+{% endblock %}
+
+{% block content %}
+    <h1>Спеціальності</h1>
+    {% for program in programs %}
+        <div class="repeated_block">
+            <a href="{{ program.id }}"><h3>{{ program.code }} {{ program.name }}</h3></a>
+            <p>
+                {{ program.get_short_description }}
+            </p>
+            <p>Координатор набору:</p>
+            <p>{{ program.coordinator_name }} <br> {{ program.coordinator_contact }}</p>
+        </div>
+    {% endfor %}
+{% endblock %}
