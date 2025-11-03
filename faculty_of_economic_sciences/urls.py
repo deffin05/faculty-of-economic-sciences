@@ -17,6 +17,13 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
+from faculty.views import index, get_departments, get_programs, get_department, get_program
+
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('', index, name='index'),
+    path('departments/', get_departments, name='departments'),
+    path('departments/<int:department_id>/', get_department, name='departments'),
+    path('programs/', get_programs, name='programs'),
+    path('programs/<int:program_id>', get_program, name='programs'),
 ]
